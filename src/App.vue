@@ -40,17 +40,19 @@ const showDelivery = () => {
   isDeliveryVisible.value = true
 }
 
-const loadJoke = () => {
+const loadJoke = async () => {
   isDeliveryVisible.value = false
   setup.value = null
   delivery.value = null
 
-  fetch('https://v2.jokeapi.dev/joke/christmas')
-    .then(response => response.json())
-    .then(data => {
-      setup.value = data.setup
-      delivery.value = data.delivery
-    })
+  try {
+    const data = await fetch('https://v2.jokeapi.dev/joke/christmas').then(response => response.json())
+    setup.value = data.setup
+    delivery.value = data.delivery
+  } catch (error) {
+    console.error(error)
+    alert('Something went wrong!')
+  }
 }
 
 loadJoke()
