@@ -13,14 +13,14 @@
       </div>
       <button
         v-if="isDeliveryVisible"
-        class="w-full bg-blue-900 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-blue-50 text-white font-semibold h-12 px-6 rounded-lg flex items-center justify-center mx-auto mt-4"
+        class="bg-green col-span-1 rounded-lg py-2 hover:opacity-90 w-full mx-auto mt-4"
         @click="loadJoke"
       >
         Another
       </button>
       <button
         v-else-if="setup"
-        class="w-full bg-blue-900 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-blue-50 text-white font-semibold h-12 px-6 rounded-lg flex items-center justify-center mx-auto mt-4"
+        class="bg-green col-span-1 rounded-lg py-2 hover:opacity-90 w-full mx-auto mt-4"
         @click="showDelivery"
       >
         Tell Me!
